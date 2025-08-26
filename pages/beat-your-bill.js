@@ -1,21 +1,13 @@
-import { useState } from 'react';
 
 export default function BeatYourBill() {
-  const [file, setFile] = useState(null);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert('Your bill has been sent to josh@islandwave.ca');
-  };
-
   return (
-    <div className="p-10 text-center">
-      <h1 className="text-3xl font-bold mb-6 text-primary">Beat Your Bill</h1>
-      <p className="mb-4">Upload your current Internet bill and we'll beat the price!</p>
-      <form onSubmit={handleSubmit} className="flex flex-col items-center">
-        <input type="file" className="mb-4" onChange={(e) => setFile(e.target.files[0])} />
-        <button type="submit" className="bg-secondary text-white px-6 py-3 rounded-full">Submit</button>
+    <div className="min-h-screen bg-gray-100 p-6">
+      <h1 className="text-3xl font-bold mb-4">Beat Your Bill</h1>
+      <p className="mb-4">Upload your current bill and we'll beat the price!</p>
+      <form method="POST" action="mailto:josh@islandwave.ca" encType="multipart/form-data">
+        <input type="file" name="bill" accept="image/*,.pdf" className="mb-4 block" />
+        <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded">Submit</button>
       </form>
     </div>
-  );
+  )
 }
