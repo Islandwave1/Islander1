@@ -1,29 +1,27 @@
-import Link from 'next/link';
+import Layout from '../components/Layout'
+import Link from 'next/link'
+import dynamic from 'next/dynamic'
+const ChatWidget = dynamic(()=>import('../components/ChatWidget'),{ssr:false})
 
-export default function Home() {
-  return (
-    <div className="bg-white min-h-screen text-gray-900">
-      <header className="bg-primary text-white p-6 flex justify-between items-center">
-        <h1 className="text-2xl font-bold">IslandWave</h1>
-        <nav>
-          <Link href="/" className="mx-2">Home</Link>
-          <Link href="/plans" className="mx-2">Plans</Link>
-          <Link href="/beat-your-bill" className="mx-2">Beat Your Bill</Link>
-          <Link href="/community" className="mx-2">Community</Link>
-          <Link href="/marketplace" className="mx-2">Marketplace</Link>
-          <Link href="/legal" className="mx-2">Legal</Link>
-        </nav>
-      </header>
-      <main className="p-10 text-center">
-        <h2 className="text-4xl font-bold text-primary mb-6">Welcome to IslandWave</h2>
-        <p className="text-lg mb-8">The fastest Internet on Vancouver Island with unbeatable deals.</p>
-        <Link href="/beat-your-bill">
-          <button className="bg-secondary text-white px-6 py-3 rounded-full text-xl">Beat Your Bill</button>
-        </Link>
-      </main>
-      <footer className="bg-gray-100 p-6 text-center">
-        <p>© 2025 IslandWave Internet Inc. All rights reserved.</p>
-      </footer>
-    </div>
-  );
+export default function Home(){
+  return (<Layout>
+    <section className="grid md:grid-cols-2 gap-6 items-center">
+      <div>
+        <div className="inline-block mb-2 px-3 py-1 rounded-full bg-white/10 text-xs">Canada • Vancouver Island</div>
+        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">IslandWave — Internet that connects communities.</h1>
+        <p className="text-white/80 mt-3">Live local content, marketplace, and a Beat‑Your‑Bill guarantee.</p>
+        <div className="mt-5 flex gap-3 flex-wrap">
+          <Link href="/plans" className="btn btn-primary">See Plans</Link>
+          <Link href="/marketplace" className="btn btn-alt">Marketplace</Link>
+        </div>
+      </div>
+      <div className="card">
+        <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-xl">
+          <iframe className="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/live_stream?channel=@Islandwavenet" title="IslandWave Live" allowFullScreen/>
+        </div>
+        <div className="text-white/70 mt-2">Live: community events & local news</div>
+      </div>
+    </section>
+    <ChatWidget/>
+  </Layout>)
 }

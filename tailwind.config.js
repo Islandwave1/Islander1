@@ -1,16 +1,10 @@
 module.exports = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./pages/**/*.{js,jsx}", "./components/**/*.{js,jsx}"],
   theme: {
     extend: {
-      colors: {
-        primary: '#0077b6',
-        secondary: '#00b4d8',
-        accent: '#90e0ef'
-      },
-    },
+      colors: { iwBlue:"#0ea5e9", iwTeal:"#10b981", iwNavy:"#0b1220" },
+      boxShadow: { glass:"0 8px 30px rgba(0,0,0,.25)" }
+    }
   },
   plugins: [],
-};
+}
