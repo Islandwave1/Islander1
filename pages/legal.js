@@ -1,11 +1,17 @@
 
 export default function Legal() {
   return (
-    <div className="p-6">
-      <h1 className="text-3xl font-bold mb-4">Legal Terms</h1>
-      <p className="mb-2">Islandwave provides internet services across Canada. By using our services, you agree to comply with applicable laws, refrain from prohibited activities, and respect fair usage policies.</p>
-      <p className="mb-2">Service availability may vary by region. Billing disputes must be reported within 30 days. Late payments may incur fees. All content and trademarks are property of Islandwave.</p>
-      <footer className="mt-6 text-sm text-gray-600">© 2025 Islandwave. All rights reserved.</footer>
+    <div style={{ padding: '20px' }}>
+      <h1>Legal & Terms of Service</h1>
+      <p>IslandWave provides Internet services under the following conditions:</p>
+      <ul>
+        <li>Service availability depends on your location within Vancouver Island.</li>
+        <li>All users must comply with Canadian telecommunications regulations.</li>
+        <li>No illegal activities or content distribution is permitted.</li>
+        <li>Billing cycles occur monthly. Non-payment may result in service suspension.</li>
+        <li>Privacy of user data is protected under Canadian law.</li>
+      </ul>
+      <p>For more details, please contact our support team.</p>
     </div>
-  )
+  );
 }

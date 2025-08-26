@@ -1,22 +1,35 @@
 
-import Link from 'next/link'
+import Head from 'next/head';
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-blue-50">
-      <header className="w-full bg-blue-700 text-white p-4 flex justify-between items-center">
-        <h1 className="text-2xl font-bold">Islandwave</h1>
-        <nav>
-          <Link href="/beat-your-bill" className="mx-2">Beat Your Bill</Link>
-          <Link href="/legal" className="mx-2">Legal</Link>
-          <Link href="/community" className="mx-2">Community</Link>
+    <div>
+      <Head>
+        <title>IslandWave - Vancouver Island ISP</title>
+      </Head>
+      <header style={{ backgroundColor: '#0a3d62', color: 'white', padding: '20px', textAlign: 'center' }}>
+        <img src="/logo.png" alt="IslandWave Logo" style={{ height: '60px' }} />
+        <nav style={{ marginTop: '10px' }}>
+          <Link href="/" style={{ margin: '0 15px', color: 'white' }}>Home</Link>
+          <Link href="/news" style={{ margin: '0 15px', color: 'white' }}>Local News</Link>
+          <Link href="/events" style={{ margin: '0 15px', color: 'white' }}>Events</Link>
+          <Link href="/signup" style={{ margin: '0 15px', color: 'white' }}>Sign Up</Link>
+          <Link href="/portal" style={{ margin: '0 15px', color: 'white' }}>Customer Portal</Link>
+          <Link href="/contact" style={{ margin: '0 15px', color: 'white' }}>Contact</Link>
         </nav>
       </header>
-      <main className="flex flex-col items-center mt-10">
-        <h2 className="text-3xl font-bold mb-4">Welcome to Islandwave</h2>
-        <p className="text-lg text-gray-700 mb-6">Better Internet. Better Community.</p>
-        <Link href="/beat-your-bill" className="bg-blue-600 text-white px-4 py-2 rounded-lg">Beat Your Bill</Link>
+      <main style={{ padding: '20px', textAlign: 'center' }}>
+        <h1>Welcome to IslandWave</h1>
+        <p>Your community-focused Internet Service Provider on Vancouver Island.</p>
+        <div style={{ marginTop: '20px' }}>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/live_stream?channel=Islandwavenet" frameBorder="0" allowFullScreen></iframe>
+        </div>
       </main>
+      <footer style={{ backgroundColor: '#0a3d62', color: 'white', padding: '20px', textAlign: 'center', marginTop: '40px' }}>
+        <p>© {new Date().getFullYear()} IslandWave Communications. All rights reserved.</p>
+        <Link href="/legal" style={{ color: 'white' }}>Legal</Link>
+      </footer>
     </div>
-  )
+  );
 }
