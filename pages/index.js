@@ -1,27 +1,10 @@
-import Layout from '../components/Layout'
-import Link from 'next/link'
-import dynamic from 'next/dynamic'
-const ChatWidget = dynamic(()=>import('../components/ChatWidget'),{ssr:false})
-
-export default function Home(){
-  return (<Layout>
-    <section className="grid md:grid-cols-2 gap-6 items-center">
-      <div>
-        <div className="inline-block mb-2 px-3 py-1 rounded-full bg-white/10 text-xs">Canada • Vancouver Island</div>
-        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">IslandWave — Internet that connects communities.</h1>
-        <p className="text-white/80 mt-3">Live local content, marketplace, and a Beat‑Your‑Bill guarantee.</p>
-        <div className="mt-5 flex gap-3 flex-wrap">
-          <Link href="/plans" className="btn btn-primary">See Plans</Link>
-          <Link href="/marketplace" className="btn btn-alt">Marketplace</Link>
-        </div>
-      </div>
-      <div className="card">
-        <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-xl">
-          <iframe className="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/live_stream?channel=@Islandwavenet" title="IslandWave Live" allowFullScreen/>
-        </div>
-        <div className="text-white/70 mt-2">Live: community events & local news</div>
-      </div>
-    </section>
-    <ChatWidget/>
-  </Layout>)
+export default function Home() {
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen bg-blue-50">
+      <img src="/logo.png" alt="IslandWave Logo" className="w-40 mb-6" />
+      <h1 className="text-4xl font-bold text-blue-700">Welcome to IslandWave</h1>
+      <p className="mt-4 text-lg text-gray-700">Your trusted Internet Service Provider across Canada.</p>
+      <a href="/plans" className="mt-6 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700">View Plans</a>
+    </div>
+  )
 }
